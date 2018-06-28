@@ -1,0 +1,99 @@
+/*strupr.c Wednesday 07 June 2018 06:10:00 Lakshmipriya */
+
+/*
+Module:
+        strupr.c
+Function:
+        To convert the given string to upper case.
+Version:
+        V1.01a Wednesday 07 June 2018 06:10:00 Lakshmipriya Edit level 1
+
+Copyright notice:
+        This file copyright (C) 2018 by
+
+                MCCI Corporation
+                3520 Krums Corners Road
+                Ithaca, NY 14850
+
+        An unpublished work. All rights reserved.
+
+        This file is proprietary information, and may not be disclosed or
+        copied without the prior permission of MCCI Corporation.
+
+Author:
+        Lakshmi priya.N, MCCI June 2018
+
+Revision history:
+        1.00A Wednesday 07 June 2018 06:10:00  Lakshmi priya
+        Module created.
+
+*/
+#include "stdafx.h"
+#include<string.h>
+#include<stdlib.h>
+****************************************************************************\
+|
+|       Manifest constants & typedefs.
+|
+|       This is strictly for private types and constants which will not
+|       be exported.
+|
+\****************************************************************************/
+/****************************************************************************\
+|
+|       Read-only data.
+|
+|       If program is to be ROM-able, these must all be tagged read-only
+|       using the ROM storage class; they may be global.
+|
+\****************************************************************************/
+
+
+/****************************************************************************\
+|
+|       VARIABLES:
+|
+|       If program is to be ROM-able, these must be initialized
+|       using the BSS keyword.  (This allows for compilers that require
+|       every variable to have an initializer.)  Note that only those
+|       variables owned by this module should be declared here, using the BSS
+|       keyword; this allows for linkers that dislike multiple declarations
+|       of objects.
+|
+\****************************************************************************/
+Name: 
+        main();
+Function:
+        This function converts the given string to upper case.
+Definition: 
+        void main()
+Description: 
+        This function checks whether the given string is 
+        froom a to z,if so it converts the given string 
+        to upper case.
+        
+Returns:
+        Nothing.
+void main()
+        {
+        char *string;
+        int i;
+        string = (char*)malloc(20*sizeof(char));
+            
+        i=0;
+        printf("enter the string");
+        gets_s(string, 20);
+        while (*(string+i) != NULL)
+                {
+                if (*(string+i)>='a'&&*(string+i)<='z')
+                        {
+                        *(string+i)= *(string+i)-32;
+                    
+                        }
+                        i++;
+                }
+         printf("%s", string);
+         getchar();
+         return 0;
+         }
+        
